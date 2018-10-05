@@ -1,0 +1,66 @@
+<html>
+<body>
+<div id="first" style="clear: both; text-align: center;">
+<h1>
+Success...!!!</h1>
+<!--
+<a href="https://cdn.instructables.com/FWA/9JHC/IX6FV7HW/FWA9JHCIX6FV7HW.LARGE.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="255" src="https://cdn.instructables.com/FWA/9JHC/IX6FV7HW/FWA9JHCIX6FV7HW.LARGE.jpg" width="400" /></a><br />
+-->
+<b> Your 20 character Authorization Code is... </b>
+<h2 id="auth">
+</h2> 
+Please use above Authorization Code to Validate your Device with Amazon DRS
+<br />
+</div>
+<div id="myDiv" style="clear: both; text-align: center;">
+<h1>
+Register Device with Amazon DRS</h1>
+<!--
+<a href="https://cdn.instructables.com/FWA/9JHC/IX6FV7HW/FWA9JHCIX6FV7HW.LARGE.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="330" src="https://cdn.instructables.com/FWA/9JHC/IX6FV7HW/FWA9JHCIX6FV7HW.LARGE.jpg" width="500" /></a>
+  -->
+<form action="form_action.asp" id="frm1">
+  <b>PRODUCT MODEL ID </b> <br /> <input maxlength="36" name="pname" size="38" style="text-align: center;" type="text" value="PBU_Towel" /><br /><br />
+  <b>SERIAL NO </b><br /> <input maxlength="12" name="sname" size="14" style="text-align: center;" type="text" value="abcd1234" /><br /><br />
+  <input onclick="lwaFunction()" type="button" value="Login with Amazon" />
+</form>
+</div>
+<br />
+<br />
+
+<script>
+function defFunction() {
+    var str = String(window.location);
+    var pos = str.indexOf("code=");
+    if(pos != -1)
+    {
+       myDiv.style.display = "none";
+       var str = String(window.location);
+       var res = str.substring(pos+5,pos+25);
+       document.getElementById("auth").innerHTML = res;
+    }
+}
+function lwaFunction() {
+    var str = String(window.location);
+    var pos = str.indexOf("code=");
+    if(pos == -1)
+    {
+        var x1 = document.getElementById("frm1");
+        var productid = String(x1.elements[0].value);
+        var serialno = String(x1.elements[1].value);
+        window.open("https://www.amazon.com/ap/oa?client_id=amzn1.application-oa2-client.1647b50d31d34f808cd3c84638e327fa&scope=dash%3Areplenish&scope_data=%7B%22dash%3Areplenish%22%3A%7B%22device_model%22%3A%22"+productid+"%22%2C%22serial%22%3A%22"+serialno+"%22%2C%22is_test_device%22%3A%22true%22%7D%7D&response_type=code&redirect_uri=https://shark0967.github.io/DRSAuthPBU/index.html");
+    }
+}
+function fstFunction() {
+    var str = String(window.location);
+    var pos = str.indexOf("code=");
+    if(pos == -1)
+    {
+        first.style.display = "none";
+    }
+}
+defFunction();
+fstFunction() 
+</script>
+</body>
+
+</html>
