@@ -32,9 +32,9 @@ Register Device with Amazon DRS</h1>
   </select> 
   <br><br>
   <b>SERIAL NO </b><br /> <input maxlength="12" name="sname" size="14" style="text-align: center;" type="text" value="pbu0001" /><br /><br />
-  <input type="checkbox" name="test_device" value="1" checked> DRS Device Test (not live) /><br> <br>
-  <input type="radio" name="testactive" value="true" checked> DRS Test Only /><br> 
-  <input type="radio" name="testactive" value="false"> DRS Live /><br><br>
+  <input type="checkbox" name="test_device" value="1" checked> DRS Device Test (not live)<br> <br>
+  <input type="radio" name="testactive" id="testactive1" value="true" checked> DRS Test Only<br> 
+  <input type="radio" name="testactive" id="testactive2" value="false"> DRS Live<br><br>
   <!--
   <input onclick="testFunction()" type="button" value="Test HTML Data" /><br><br>
   -->
@@ -64,7 +64,12 @@ function lwaFunction() {
         var x1 = document.getElementById("frm1");
         var productid = String(x1.elements[0].value);
         var serialno = String(x1.elements[1].value);
-        var devicenotactive = String(document.getElementById("testactive").value);
+				var devicenotactive = "true";
+				if(document.getElementById("testactive2").checked)
+				{
+					devicenotactive = "false";
+				}
+				
 //        var devicenotactive = String(x1.elements[2].value);
 //        var testdeviceradio = String(x1.elements[3].value);
 //        var selradio = String(document.getElementById("testactive").value);
