@@ -63,7 +63,8 @@ function lwaFunction() {
         var device_not_active = String(x1.elements[2].value);
         var test_device_radio = String(x1.elements[3].value);
         var sel_radio = document.getElementById("testactive").value;
-        document.getElementById("debug_txt").value = sel_radio+" "+test_device_radio+" "+device_not_active;
+//        document.getElementById("debug_txt").value = sel_radio+" "+test_device_radio+" "+device_not_active;
+        alert("radio="sel_radio+"  test_device_radio="+test_device_radio+" device_not_active="+device_not_active);
 
         var test_device = "true"
         if(device_not_active != "1")
