@@ -32,9 +32,13 @@ Register Device with Amazon DRS</h1>
   </select> 
   <br><br>
   <b>SERIAL NO </b><br /> <input maxlength="12" name="sname" size="14" style="text-align: center;" type="text" value="pbu0001" /><br /><br />
-  <input type="checkbox" name="test_device" value="1" checked> DRS Device Test (not live)<br> <br>
+  <!--
+  <input type="checkbox" name="test_device" value="1" style="display:none" checked> DRS Device Test (not live)<br> <br>
+  -->
+  <div>
   <input type="radio" name="testactive" id="testactive1" value="true" checked> DRS Test Only<br> 
   <input type="radio" name="testactive" id="testactive2" value="false"> DRS Live<br><br>
+  </div>
   <!--
   <input onclick="testFunction()" type="button" value="Test HTML Data" /><br><br>
   -->
@@ -68,17 +72,10 @@ function lwaFunction() {
 				if(document.getElementById("testactive2").checked)
 				{
 					devicenotactive = "false";
-				}
-				
+				}				
 //        var devicenotactive = String(x1.elements[2].value);
-//        var testdeviceradio = String(x1.elements[3].value);
-//        var selradio = String(document.getElementById("testactive").value);
 //        var rediruri = String("https://shark0967.github.io/DRSAuthTest/pbu.html");
-//        var testdevice = String("true");        
-//        if(devicenotactive != "1")
-//        {
-//        	testdevice = "false";
-//        }
+//
 //  			document.getElementById("debug").innerHTML="selradio+"  testdeviceradio="+testdeviceradio+" devicenotactive="+devicenotactive;
 //        alert("radio="selradio+"  testdeviceradio="+testdeviceradio+" devicenotactive="+devicenotactive);
 //        window.open("https://www.amazon.com/ap/oa?client_id=amzn1.application-oa2-client.1647b50d31d34f808cd3c84638e327fa&scope=dash%3Areplenish&scope_data=%7B%22dash%3Areplenish%22%3A%7B%22device_model%22%3A%22"+productid+"%22%2C%22serial%22%3A%22"+serialno+"%22%2C%22is_test_device%22%3A%22true%22%7D%7D&response_type=code&redirect_uri=https://shark0967.github.io/DRSAuthTest/pbu.html");
