@@ -36,8 +36,8 @@ Register Device with Amazon DRS</h1>
   <input type="checkbox" name="test_device" value="1" style="display:none" checked> DRS Device Test (not live)<br> <br>
   -->
   <div>
-  <input type="radio" name="testactive" id="testactive1" value="true" checked> DRS Test Only<br> 
-  <input type="radio" name="testactive" id="testactive2" value="false"> DRS Live<br><br>
+  <input type="radio" name="testactivesel" id="testactive" value="true" checked> DRS Test Only<br> 
+  <input type="radio" name="testactivesel" id="drsactive" value="false"> DRS Live<br><br>
   </div>
   <!--
   <input onclick="testFunction()" type="button" value="Test HTML Data" /><br><br>
@@ -69,7 +69,7 @@ function lwaFunction() {
         var productid = String(x1.elements[0].value);
         var serialno = String(x1.elements[1].value);
 				var device_not_active = "true";
-				if(document.getElementById("testactive2").checked)
+				if(document.getElementById("drsactive").checked)
 				{
 					device_not_active = "false";
 				}				
