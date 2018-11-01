@@ -1,5 +1,56 @@
 <html> 
 <body> 
+<div id="first" style="clear: both; text-align: center;">
+<h1>
+Success...!!!</h1>
+<!--
+-->
+<a href="https://github.com/shark0967/DRSAuthTest/raw/master/image/PacificBlueUltraTowel.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="200" src="https://github.com/shark0967/DRSAuthTest/raw/master/image/PacificBlueUltraTowel.png" width="200" /></a><br />
+<b> Your 20 character Authorization Code is... </b>
+<h2 id="auth">
+</h2> 
+Please use above Authorization Code to Validate your Device for Auto-Replenishment Services<br /><br />
+<!--
+Please use above Authorization Code to Validate your Device with Amazon DRS<br /><br />
+-->
+Please click to email Authorization Code to: <a href="mailto:GPReplenishment@GAPAC.com?subject=PBU Auth Grant&body=Paste Authorization Grant Code Below">GPReplenishment@gapac.com</a>
+<br />
+</div>
+<div id="myDiv" style="clear: both; text-align: center;">
+<h1>
+Register Device with GP Replenishment Services</h1>
+<!--
+Register Device with Amazon DRS</h1>
+  -->
+<a href="https://github.com/shark0967/DRSAuthTest/raw/master/image/PacificBlueUltraTowel.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="400" src="https://github.com/shark0967/DRSAuthTest/raw/master/image/PacificBlueUltraTowel.png" width="400" /></a>
+<form action="form_action.asp" id="frm1">
+  <b>PRODUCT MODEL ID </b> <br /> 
+  <!--
+  <input maxlength="36" name="pname" size="38" style="text-align: center;" type="text" value="PBU_Towel" /><br /><br />
+  -->
+  <select name="model">
+  	<option value="PBU_Towel">PBU Towel</option>
+  	<option value="Retail_Towel">Retail Towel</option>
+  </select> 
+  <br><br>
+  <b>SERIAL NO </b><br /> <input maxlength="12" name="sname" size="14" style="text-align: center;" type="text" value="pbu0001" /><br /><br />
+  <!--
+  <input type="checkbox" name="test_device" value="1" style="display:none" checked> DRS Device Test (not live)<br> <br>
+  -->
+  <div>
+  <input type="radio" name="testactivesel" id="testactive" value="true" checked> DRS Test Only<br> 
+  <input type="radio" name="testactivesel" id="drsactive" value="false"> DRS Live<br><br>
+  </div>
+  <!--
+  <input onclick="testFunction()" type="button" value="Test HTML Data" /><br><br>
+  <input onclick="lwaFunction()" type="button" value="Login with Amazon" /><br><br>
+  -->
+  <input onclick="lwaFunction()" type="button" value="Login with Amazon" /><br><br>
+</form>
+</div>
+<br />
+<br />
+
 <script type="text/javascript"> 
  window.onAmazonLoginReady = function() { 
    amazon.Login.setClientId('amzn1.application-oa2-client.797db1c0ecae473db6cf71d6cc951808'); //enter your LWA client ID  
