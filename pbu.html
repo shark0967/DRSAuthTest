@@ -51,6 +51,24 @@ Register Device with Amazon DRS</h1>
 <br />
 <br />
 
+<script type="text/javascript"> 
+ document.getElementById('LoginWithAmazon').onclick = function() { 
+	var returnuri = 'https://shark0967.github.io/DRSAuthTest/pbu.html'; //this is where you want the authorization_code returned to (it will be on the query string)
+	var serial = 'pbu0001'; //enter the serial number for the device 
+	var device = 'PBU_Towel'; //enter the device number for the device 
+   var options = new Object();  
+	var scope = ('dash:replenish'); 
+	var scope_data = new Object(); 
+	scope_data['dash:replenish'] = {"device_model":device,"serial":serial,"is_test_device":true}; 
+	options['scope'] = scope; 
+	options['scope_data'] = scope_data; 
+//	options['state'] = serial; 
+//	options['interactive'] = 'always'; 
+	options['response_type'] = 'code'; 
+   amazon.Login.authorize(options, returnuri); 
+   return false; 
+ }; 
+</script> 
 <script>
 function defFunction() {
     var str = String(window.location);
@@ -86,7 +104,7 @@ function lwaFunction() {
 //        window.open("https://www.amazon.com/ap/oa?client_id=amzn1.application-oa2-client.1647b50d31d34f808cd3c84638e327fa&scope=dash%3Areplenish&scope_data=%7B%22dash%3Areplenish%22%3A%7B%22device_model%22%3A%22"+productid+"%22%2C%22serial%22%3A%22"+serialno+"%22%2C%22is_test_device%22%3A%22"+devicenotactive+"%22%7D%7D&response_type=code&redirect_uri%3Dhttps%3A%2F%2Fshark0967.github.io%2FDRSAuthTest%2Fpbu.html");
 //        window.open("https://www.amazon.com/ap/oa?client_id=amzn1.application-oa2-client.1647b50d31d34f808cd3c84638e327fa&scope=dash%3Areplenish&scope_data=%7B%22dash%3Areplenish%22%3A%7B%22device_model%22%3A%22"+productid+"%22%2C%22serial%22%3A%22"+serialno+"%22%2C%22is_test_device%22%3A%22"+device_not_active+"%22%7D%7D&response_type=code&redirect_uri=https://shark0967.github.io/DRSAuthTest/pbu.html");
 //        window.open("https://www.amazon.com/ap/oa?client_id=amzn1.application-oa2-client.797db1c0ecae473db6cf71d6cc951808&scope=dash%3Areplenish&scope_data=%7B%22dash%3Areplenish%22%3A%7B%22device_model%22%3A%22"+productid+"%22%2C%22serial%22%3A%22"+serialno+"%22%2C%22is_test_device%22%3A%22"+device_not_active+"%22%7D%7D&response_type=code&redirect_uri=https://shark0967.github.io/DRSAuthTest/pbu.html");
-        window.open("https://www.amazon.com/ap/oa?client_id=amzn1.application-oa2-client.797db1c0ecae473db6cf71d6cc951808&scope=dash%3Areplenish&scope_data=%7B%22dash%3Areplenish%22%3A%7B%22device_model%22%3A%22"+productid+"%22%2C%22serial%22%3A%22"+serialno+"%22%2C%22is_test_device%22%3A%22"+device_not_active+"%22%7D%7D&response_type=code&redirect_uri=https%3A%2F%2Fshark0967.github.io%2FDRSAuthTest%2Fpbu.html");
+        window.open("https://www.amazon.com/ap/oa?client_id=amzn1.application-oa2-client.797db1c0ecae473db6cf71d6cc951808&scope=dash%3Areplenish&scope_data=%7B%22dash%3Areplenish%22%3A%7B%22device_model%22%3A%22"+productid+"%22%2C%22serial%22%3A%22"+serialno+"%22%2C%22is_test_device%22%3A%22"+device_not_active+"%22%7D%7D&response_type=code&redirect_uri=https://shark0967.github.io/DRSAuthTest/pbu.html");
     }
 }
 function fstFunction() {
