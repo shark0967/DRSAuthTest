@@ -57,6 +57,19 @@ Register Device with Amazon DRS</h1>
 
 <div id="amazon-root"></div>
 <script type="text/javascript"> 
+ window.onAmazonLoginReady = function() { 
+   amazon.Login.setClientId('amzn1.application-oa2-client.797db1c0ecae473db6cf71d6cc951808'); //enter your LWA client ID  
+ }; 
+ (function(d) { 
+   var a = d.createElement('script'); a.type = 'text/javascript'; 
+   a.async = true; 
+   a.id = 'amazon-login-sdk'; 
+   a.src = 'https://api-cdn.amazon.com/sdk/login1.js'; 
+   d.getElementById('amazon-root').appendChild(a); 
+ })(document); 
+</script> 
+
+<script type="text/javascript"> 
  document.getElementById('LoginWithAmazon').onclick = function() { 
 	var returnuri = 'https://shark0967.github.io/DRSAuthTest/pbu.html'; //this is where you want the authorization_code returned to (it will be on the query string)
 	var serial = 'pbu0001'; //enter the serial number for the device 
