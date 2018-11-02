@@ -73,9 +73,17 @@ Register Device with Amazon DRS</h1>
 
 <script type="text/javascript"> 
  document.getElementById('LoginWithAmazon').onclick = function() { 
+        var x1 = document.getElementById("frm1");
+        var device = String(x1.elements[0].value);
+        var serialNo = String(x1.elements[1].value);
+				var device_not_active = "true";
+				if(document.getElementById("drsactive").checked)
+				{
+					device_not_active = "false";
+				}				
 	var returnuri = 'https://shark0967.github.io/DRSAuthTest/pbu.html'; //this is where you want the authorization_code returned to (it will be on the query string)
-	var serialNo = 'pbu0001'; //enter the serial number for the device 
-	var device = 'PBU_Towel'; //enter the device number for the device 
+//	var serialNo = 'pbu0001'; 	//enter the serial number for the device 
+//	var device = 'PBU_Towel'; 	//enter the device number for the device 
    var options = new Object();  
 	var drsScope = 'dash:replenish'; 
 	var scope_data = new Object(); 
@@ -88,7 +96,8 @@ Register Device with Amazon DRS</h1>
 	options['scope_data'] = scope_data; 
 //	options['state'] = serialNo; 
 //	options['interactive'] = 'always'; 
-	options['response_type'] = 'code'; 
+	options['response_type'] = 'cod'; 		// intentional error to get error message with data
+//	options['response_type'] = 'code'; 
    amazon.Login.authorize(options, returnuri); 
    return false; 
  }; 
@@ -111,10 +120,8 @@ function lwaFunction() {
     if(pos == -1)
     {
         var x1 = document.getElementById("frm1");
-//        var productid = String(x1.elements[0].value);
-//        var serialno = String(x1.elements[1].value);
-        var productid = "PBU_Towel";
-        var serialno = "pbu0001";
+        var productid = String(x1.elements[0].value);
+        var serialno = String(x1.elements[1].value);
 				var device_not_active = "true";
 				if(document.getElementById("drsactive").checked)
 				{
