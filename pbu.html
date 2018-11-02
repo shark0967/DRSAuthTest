@@ -85,7 +85,8 @@ Register Device with Amazon DRS</h1>
 //	var serialNo = 'pbu0001'; 	//enter the serial number for the device 
 //	var device = 'PBU_Towel'; 	//enter the device number for the device 
    var options = new Object();  
-	var drsScope = 'dash:replenish'; 
+//	var drsScope = 'dash:replenish'; 
+	var drsScope = 'dish:garbage'; 		// intentional error to get info displayed
 	var scope_data = new Object(); 
 	scope_data[drsScope] = {
 		device_model: device,
@@ -96,8 +97,7 @@ Register Device with Amazon DRS</h1>
 	options['scope_data'] = scope_data; 
 //	options['state'] = serialNo; 
 //	options['interactive'] = 'always'; 
-	options['response_type'] = 'cod'; 		// intentional error to get error message with data
-//	options['response_type'] = 'code'; 
+	options['response_type'] = 'code'; 
    amazon.Login.authorize(options, returnuri); 
    return false; 
  }; 
