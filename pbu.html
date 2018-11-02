@@ -9,11 +9,13 @@ Success...!!!</h1>
 <b> Your 20 character Authorization Code is... </b>
 <h2 id="auth">
 </h2> 
+<h2 id="serialId">
+</h2> 
 Please use above Authorization Code to Validate your Device for Auto-Replenishment Services<br /><br />
 <!--
 Please use above Authorization Code to Validate your Device with Amazon DRS<br /><br />
 -->
-Please click to email Authorization Code to: <a href="mailto:GPReplenishment@GAPAC.com?subject=PBU Auth Grant&body=Paste Authorization Grant Code Below">GPReplenishment@gapac.com</a>
+Please click to email Authorization Code to: <a href="mailto:GPReplenishment@GAPAC.com?subject=PBU Auth Grant&body=Paste Authorization Grant Code Below, including Device Serial Number">GPReplenishment@gapac.com</a>
 <br />
 </div>
 <div id="myDiv" style="clear: both; text-align: center;">
@@ -112,6 +114,7 @@ function defFunction() {
        var str = String(window.location);
        var res = str.substring(pos+5,pos+25);
        document.getElementById("auth").innerHTML = res;
+       window.open('mailto:stephen.kobs@gapac.com?subject=DRS AuthGrant Code&body='+res);
     }
 }
 function lwaFunction() {
