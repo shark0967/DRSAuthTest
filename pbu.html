@@ -76,23 +76,23 @@ Register Device with Amazon DRS</h1>
         var x1 = document.getElementById("frm1");
         var device = String(x1.elements[0].value);
         var serialNo = String(x1.elements[1].value);
-				var device_not_active = "true";
+				var device_not_active = 'true';
 				if(document.getElementById("drsactive").checked)
 				{
-					device_not_active = "false";
+					device_not_active = 'false';
 				}				
 	var returnuri = 'https://shark0967.github.io/DRSAuthTest/pbu.html'; //this is where you want the authorization_code returned to (it will be on the query string)
 //	var serialNo = 'pbu0001'; 	//enter the serial number for the device 
 //	var device = 'PBU_Towel'; 	//enter the device number for the device 
    var options = new Object();  
-//	var drsScope = 'dash:replenish'; 
-	var drsScope = 'dash:replen'; 		// intentional error to get info displayed
+	var drsScope = 'dash:replenish'; 
 	var scope_data = new Object(); 
 	scope_data[drsScope] = {
 		device_model: device,
 		serial: serialNo,
 		should_include_non_live: 'true',
-		is_test_device: 'true'}; 
+		is_test_device: device_not_active}; 
+//		is_test_device: 'true'}; 
 	options['scope'] = drsScope; 
 	options['scope_data'] = scope_data; 
 //	options['state'] = serialNo; 
